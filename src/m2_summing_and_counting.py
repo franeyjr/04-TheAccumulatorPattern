@@ -126,7 +126,7 @@ def sum_more_cosines(m, n):
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  count_sines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -145,9 +145,39 @@ def run_test_count_sines_from():
     print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 4 (continued).
+    # DONE: 4 (continued).
     # Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
+
+    # Test 2:
+    expected = 1
+    answer = count_sines_from(1, 3)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 2
+    answer = count_sines_from(5, 8)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 5
+    answer = count_sines_from(10, 16)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 5:
+    expected = 5
+    answer = count_sines_from(13, 19)
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 6:
+    expected = 7
+    answer = count_sines_from(4, 12)
+    print('Test 6 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def count_sines_from(m, n):
@@ -177,7 +207,11 @@ def count_sines_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    x = (n + 1) - m
+    total = 0
+    for k in range(x):
+        total = total + math.sin(k + m)
+    return total
 
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
